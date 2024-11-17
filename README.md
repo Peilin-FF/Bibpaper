@@ -29,8 +29,7 @@ Don't hesitate to leave your :star2:
 
 ## Star History
 
-<iframe style="width:100%;height:auto;min-width:600px;min-height:400px;" src="https://star-history.com/embed?secret=#Bibpaper/Bibpaper&Date" frameBorder="0"></iframe>
-<!-- [![Star History Chart](https://api.star-history.com/svg?repos=yuchenlin/rebiber&type=Date)](https://star-history.com/#yuchenlin/rebiber&Date) -->
+[![Star History Chart](https://api.star-history.com/svg?repos=Bibpaper/Bibpaper&type=Date)](https://star-history.com/#Bibpaper/Bibpaper&Date)
 
 ## Contact
 
