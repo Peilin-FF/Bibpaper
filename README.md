@@ -3,10 +3,17 @@
 When we cite other scholars' papers, we often find that most of the articles searched by Google Scholar cite arxiv's preprint Bibtex (even if this paper has been __PUBLISHED__  in some journals or conferences), which makes our paper writing appear unprofessional. I wrote an automated script&exe __Bibpaper__ that can find what conference the paper has been cited by and return the response of the latest citation.
 
 All you need to do is enter the title of the article and click Fetch Bibtex to get the Bibtex of the paper.
+
+## News 
+:sun_with_face: I published Bibpaper version==0.1 
+
 ## How to use it?    
 ![image](https://github.com/user-attachments/assets/b4bec08e-c794-4efb-85ae-17a72eb5f6b3)
-Here you can find this paper has been included in ICLR 2024
-![image](https://github.com/user-attachments/assets/109d51b1-ca59-4a57-8cdd-dcdc1d8b2c24)
+
+Here you can find this paper has been included in ICLR 2024 :tada:
+
+![image](https://github.com/user-attachments/assets/bb29dc47-c482-47a3-890c-426a550a14ae)
+
 However,if you search for this paper directly in Google,you will find it still in arxiv version
 ## Installation
 
@@ -53,116 +60,8 @@ python rebiber/normalize.py \
 ``` -->
 
 
-## Example Input and Output
-An example input entry with the arXiv information (from Google Scholar or somewhere):
-```bib
-@article{lin2020birds,
-	title={Birds have four legs?! NumerSense: Probing Numerical Commonsense Knowledge of Pre-trained Language Models},
-	author={Lin, Bill Yuchen and Lee, Seyeon and Khanna, Rahul and Ren, Xiang},
-	journal={arXiv preprint arXiv:2005.00683},
-	year={2020}
-}
-
-```
- 
-
-An example normalized output entry with the official information:
-```bib
-@inproceedings{lin2020birds,
-    title = "{B}irds have four legs?! {N}umer{S}ense: {P}robing {N}umerical {C}ommonsense {K}nowledge of {P}re-{T}rained {L}anguage {M}odels",
-    author = "Lin, Bill Yuchen  and
-      Lee, Seyeon  and
-      Khanna, Rahul  and
-      Ren, Xiang",
-    booktitle = "Proceedings of the 2020 Conference on Empirical Methods in Natural Language Processing (EMNLP)",
-    month = nov,
-    year = "2020",
-    address = "Online",
-    publisher = "Association for Computational Linguistics",
-    url = "https://www.aclweb.org/anthology/2020.emnlp-main.557",
-    doi = "10.18653/v1/2020.emnlp-main.557",
-    pages = "6862--6868",
-}
-```
-
-
-## Supported Conferences 
-
-The `bib_list.txt` contains a list of converted json files of the official bib data. In this repo, we now support the full [ACL anthology](https://www.aclweb.org/anthology/), i.e., all papers that are published at *CL conferences (ACL, EMNLP, NAACL, etc.) as well as workshops.
-Also, we support any conference proceedings that can be downloaded from DBLP, for example, ICLR2020.
-
-Note that to DBLP only allows you to download in batches of 1000 using &h=1000&f=0, where f=0|1000|2000 specifies the starting index. So we have to manually download the bib files of each conference and concatenate them together. `add_conf.sh` takes care of that, too.
-
-The following conferences are supported and their bib/json files are in our `data` folder. You can turn each item on/off in `bib_list.txt`. **Please feel free to create PR for adding new conferences following [this](#adding-a-new-conference)!** 
-
-| Name | Years |
-| --- | ----------- |
-| ACL Anthology |  (until 2024-07) |
-| AAAI | 2010 -- 2024 |
-| AISTATS | 2013 -- 2024 |
-| ALENEX | 2010 -- 2020 |
-| ASONAM | 2010 -- 2019 |
-| BigDataConf | 2013 -- 2019 |
-| BMVC | 2010 -- 2023 |
-| CHI | 2010 -- 2024 |
-| CIDR | 2009 -- 2020 |
-| CIKM | 2010 -- 2020 |
-| COLT | 2000 -- 2020 |
-| CVPR | 2000 -- 2023 |
-| ICASSP | 2015 -- 2023 |
-| ICCV | 2003 -- 2023 |
-| ICLR | 2013 -- 2023 |
-| ICML | 2000 -- 2023 |
-| IJCAI | 2011 -- 2023 |
-| INTERSPEECH | 2016 -- 2023 |
-| KDD | 2010 -- 2023 |
-| MLSys | 2019 -- 2020 |
-| MM | 2016 -- 2020 |
-| NeurIPS | 2000 -- 2023 |
-| RECSYS | 2010 -- 2020 |
-| SDM | 2010 -- 2020 |
-| SIGIR | 2010 -- 2023 |
-| SIGMOD | 2010 -- 2022 (2023 and after changed to journal) |
-| SODA | 2010 -- 2020 |
-| STOC | 2010 -- 2020 |
-| UAI | 2010 -- 2023 |
-| WSDM | 2008 -- 2020 |
-| WWW (The Web Conf) | 2001 -- 2024 |
-
-
-**Thanks for [Anton Tsitsulin](http://tsitsul.in/)'s great work on collecting such a complete set bib files!**
-
-<!-- 
-python bib2json.py -i data/iclr2020.bib -o data/iclr2020.json
-python bib2json.py -i data/iclr2019.bib -o data/iclr2019.json
-python bib2json.py -i data/iclr2018.bib -o data/iclr2018.json
-python bib2json.py -i data/aaai2020.bib -o data/aaai2020.json
- -->
-
-
-## Adding a new conference
-
-- Step 1, obtain the bib files for the conferences
-
-You may download the bib files of recent conferences from dblp by running the code:
-```bash
-python download_dblp.py
-```
-Notice that ECCV and ECML does not work for the automatic download. 
-
-Alternatively, you can manually add any conferences from DBLP by downloading their bib files to our `raw_data` folder, and run a prepared script `add_conf.sh`.
-Take ICLR2020 and ICLR2019 as an example:
-- Go to [DBLP](https://dblp.org/db/conf/iclr/iclr2020.html) and Download the bib files, and put them here as `raw_data/iclr2020.bib` and `raw_data/iclr2019.bib` (name should be in the format as {conf_name}{year}.bib)
-
-- Step 2: Run script to add the conferences
-```bash
-bash add_conf.sh iclr 2019 2020
-```
-
-Particularly, to update *CL conference, we can 
-```bash 
-python bib2json.py -i raw_data/anthology.bib -o data/acl.json
-```
+##By the way
+Don't hesitate to leave your :star2: 
 
 ## Star History
 
