@@ -29,7 +29,7 @@ Don't hesitate to leave your :star2:
 
 ## Star History
 
-[![Star History Chart](https://api.star-history.com/svg?repos=Bibpaper/Bibpaper&type=Date)](https://star-history.com/#Bibpaper/Bibpaper&Date)
+[![Star History Chart](https://api.star-history.com/svg?repos=Peilin-FF/Bibpaper&type=Date)](https://star-history.com/#Peilin-FF/Bibpaper&Date)
 
 ## Contact
 
