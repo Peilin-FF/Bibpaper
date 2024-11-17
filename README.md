@@ -1,47 +1,9 @@
 # Bibpaepr: Cite the paper in a proper way
 
-<p>
-<a href="https://huggingface.co/spaces/yuchenlin/Rebiber">
-    <img src="https://img.shields.io/badge/🤗 Web%20Demo--red?style=flat_square">
-  </a>
+When we cite other scholars' papers, we often find that most of the articles searched by Google Scholar cite arxiv's preprint Bibtex (even if this paper has been __PUBLISHED__  in some journals or conferences), which makes our paper writing appear unprofessional. I wrote an automated script&exe __Bibpaper__ that can find what conference the paper has been cited by and return the response of the latest citation.
 
-<a href="https://colab.research.google.com/drive/12oQcLs25CFjI4evsFlWfKD1DfTEiqyCN?usp=sharing">
-    <img src="https://img.shields.io/badge/Colab%20Notebook--green?style=flat_square&logo=googlecolab">
-     <!-- <img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/, width=150, height=150/></a> -->
-  </a>
-
-<a href="https://twitter.com/billyuchenlin/status/1353850378438070272?s=20">
-    <img src="https://img.shields.io/badge/Tweet--blue?style=flat_square&logo=twitter">
-  </a>
-</p>
-
-We often cite papers using their arXiv versions without noting that they are already __PUBLISHED__ in some conferences. These unofficial bib entries might violate rules about submissions or camera-ready versions for some conferences. 
-We introduce __Rebiber__, a simple tool in Python to fix them automatically. It is based on the official conference information from the [DBLP](https://dblp.org/) or [the ACL anthology](https://www.aclweb.org/anthology/) (for NLP conferences)! You can check the list of supported conferences [here](#supported-conferences).
-Apart from handling outdated arXiv citations, __Rebiber__ also normalizes citations in a unified way (DBLP-style), supporting abbreviation and value selection.
-
-
-
-<!-- ***Web demo:*** [https://rebiber.herokuapp.com/](https://rebiber.herokuapp.com/) (recommended). -->
-
-***Demo on Huggingface Space [https://huggingface.co/spaces/yuchenlin/Rebiber](https://huggingface.co/spaces/yuchenlin/Rebiber) (recommended)***
-
-***Colab notebook:*** [here](https://colab.research.google.com/drive/12oQcLs25CFjI4evsFlWfKD1DfTEiqyCN?usp=sharing) 
-
-## Changelog
-
-- **2024.7** Version 1.2.0. added automatic script to download bib files for recent conferences from dblp. 
-
-- **2023.06.01** New demo ready to use on Huggingface's Space via Gradio. Also, a few conferences are added.
-
-- **2021.09.06** We fixed a few minor bugs and added features such as sorting and urls to arXiv (if the paper is not in any conferences; thanks to [@nicola-decao](https://github.com/nicola-decao)). We also updated the ACL anthology bib/json to the latest version as well as other conferences.
-
-- **2021.05.30** 
-We build a [beta version](https://rebiber.herokuapp.com/) of our **web app for Rebiber**; add new conferences to our dataset; fix a few minor bugs. (It is not working anymore. Please use the new huggingface space demo.)
-- **2021.02.08** 
-We now support multiple useful features: 1) turning off some certain values, e.g., "-r url,pages,address" for removing the values from the output, 2) using abbr. to shorten the booktitle values, e.g., `Proceedings of the .* Annual Meeting of the Association for Computational Linguistics` --> `Proc. of ACL`. More examples are [here.](https://github.com/yuchenlin/rebiber/blob/main/rebiber/abbr.tsv)
-- **2021.01.30** 
-We build a colab notebook as a simple web demo. [link](https://colab.research.google.com/drive/12oQcLs25CFjI4evsFlWfKD1DfTEiqyCN?usp=sharing)
-
+All you need to do is enter the title of the article and click Fetch Bibtex to get the Bibtex of the paper.
+## How to use it?  
 
 
 ## Installation
