@@ -10,7 +10,7 @@ All you need to do is enter the title of the article and click Fetch Bibtex to g
 ## How to use it?    
 ![image](https://github.com/user-attachments/assets/b4bec08e-c794-4efb-85ae-17a72eb5f6b3)
 
-Here you can find this paper has been included in #ICLR 2024# :tada:
+Here you can find this paper has been included in **ICLR 2024** :tada:
 
 ![image](https://github.com/user-attachments/assets/bb29dc47-c482-47a3-890c-426a550a14ae)
 
@@ -21,10 +21,10 @@ However,if you search for this paper directly in Google,you will find it still i
 git clone https://github.com/Peilin-FF/Bibpaper.git
 ```
 unzip Baber.zip
-## That's all ## 
+**That's all**
+But if you want to develop this work:snowman:, you can add jobs as needed in Bibpaper.
 
-
-##By the way
+## By the way
 Don't hesitate to leave your :star2: 
 
 ## Star History
