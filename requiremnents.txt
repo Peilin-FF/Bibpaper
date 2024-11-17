@@ -1,0 +1,5 @@
+selenium==4.26.1
+requests
+ttkbootstrap
+pyperclip
+bibtexparser
