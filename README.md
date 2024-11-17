@@ -1,4 +1,4 @@
-# Rebiber: A tool for normalizing bibtex with official info.
+# Bibpaepr: Cite the paper in a proper way
 
 <p>
 <a href="https://huggingface.co/spaces/yuchenlin/Rebiber">
